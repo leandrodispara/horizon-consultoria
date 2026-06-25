@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Horizon Consultoria — Venda Mais nos Maiores Marketplaces do Brasil</title>
+<meta name="description" content="Consultoria credenciada Mercado Livre e Shein. Mais de 100 clientes atendidos. Análise sem compromisso."/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --verde:#1a9e6e;--verde2:#16856b;--verde-claro:#e8f7f2;--verde-bg:#f0faf6;
+  --dark:#0f1f2e;--dark2:#1a2e3b;
+  --texto:#1a2e3b;--suave:#4a6070;--muted:#8a9eae;
+  --branco:#fff;--cinza:#f8f9fa;--borda:#e8eef2;
+  --vermelho:#e74c3c;--vermelho-bg:#fef2f2;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--texto);background:var(--branco);overflow-x:hidden;line-height:1.6}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:999;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--borda);padding:0 6vw;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-icon{width:36px;height:36px;background:var(--verde);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff}
+.nav-brand-text strong{display:block;font-size:15px;font-weight:800;color:var(--texto);line-height:1.2}
+.nav-brand-text span{font-size:12px;color:var(--suave)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--suave);font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--texto)}
+.nav-btn{background:var(--verde);color:#fff;text-decoration:none;padding:10px 22px;border-radius:100px;font-size:14px;font-weight:700;transition:background .2s}
+.nav-btn:hover{background:var(--verde2)}
+@media(max-width:768px){.nav-links{display:none}}
+
+/* HERO */
+.hero{padding:80px 6vw 60px;text-align:center;background:linear-gradient(180deg,#f0fdfb 0%,#fff 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(26,158,110,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--branco);border:1.5px solid var(--borda);border-radius:100px;padding:6px 16px;font-size:13px;font-weight:600;color:var(--suave);margin-bottom:36px}
+.hero-badge::before{content:'';width:8px;height:8px;background:var(--verde);border-radius:50%;display:inline-block}
+.hero h1{font-size:clamp(40px,6vw,72px);font-weight:900;line-height:1.05;letter-spacing:-2px;color:var(--texto);margin-bottom:8px}
+.hero h1 .green{color:var(--verde)}
+.hero-sub{font-size:clamp(16px,1.8vw,19px);color:var(--suave);max-width:600px;margin:20px auto 44px;line-height:1.75}
+.hero-sub strong{color:var(--texto)}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--verde);color:#fff;text-decoration:none;padding:18px 40px;border-radius:100px;font-size:16px;font-weight:800;letter-spacing:.3px;transition:background .2s,transform .2s;box-shadow:0 8px 32px rgba(26,158,110,0.3)}
+.btn-primary:hover{background:var(--verde2);transform:translateY(-2px)}
+.hero-checks{display:flex;gap:32px;justify-content:center;margin-top:40px;flex-wrap:wrap}
+.hcheck{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--suave);font-weight:500}
+.hcheck svg{color:var(--verde);flex-shrink:0}
+
+/* PLATAFORMAS */
+.plat{padding:48px 6vw;border-top:1px solid var(--borda);border-bottom:1px solid var(--borda);background:var(--branco)}
+.plat-inner{max-width:1100px;margin:0 auto;text-align:center}
+.plat h2{font-size:clamp(26px,3.5vw,40px);font-weight:900;letter-spacing:-1px;margin-bottom:6px}
+.plat h2 .green{color:var(--verde)}
+.plat-sub{font-size:15px;color:var(--muted);margin-bottom:36px}
+.plat-logos{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center}
+.plat-tag{background:var(--cinza);border:1.5px solid var(--borda);border-radius:10px;padding:12px 24px;font-size:14px;font-weight:600;color:var(--texto)}
+
+/* DESAFIOS */
+.desafios{padding:80px 6vw;background:var(--cinza)}
+.container{max-width:1100px;margin:0 auto}
+.eyebrow{display:inline-block;background:var(--vermelho-bg);color:var(--vermelho);border-radius:100px;padding:4px 14px;font-size:12px;font-weight:700;letter-spacing:.5px;margin-bottom:20px}
+.eyebrow.green{background:var(--verde-claro);color:var(--verde)}
+.section-title{font-size:clamp(28px,4vw,46px);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:12px}
+.section-sub{font-size:17px;color:var(--suave);max-width:560px;margin-bottom:52px;line-height:1.7}
+.desafios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.desafio-card{background:var(--branco);border:1.5px solid var(--borda);border-radius:14px;padding:24px;display:flex;align-items:flex-start;gap:14px;transition:box-shadow .2s}
+.desafio-card:hover{box-shadow:0 4px 24px rgba(0,0,0,0.07)}
+.desafio-x{width:28px;height:28px;background:var(--vermelho-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--vermelho);font-size:14px;font-weight:900}
+.desafio-card p{font-size:14px;color:var(--suave);line-height:1.6;font-weight:500}
+
+/* SERVIÇOS */
+.servicos{padding:80px 6vw;background:var(--branco)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.serv-card{background:var(--branco);border:1.5px solid var(--borda);border-radius:16px;padding:32px;transition:box-shadow .2s,transform .2s}
+.serv-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.08);transform:translateY(-3px)}
+.serv-icon-wrap{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px}
+.serv-card h3{font-size:17px;font-weight:800;color:var(--texto);margin-bottom:10px}
+.serv-card p{font-size:14px;color:var(--suave);line-height:1.7;margin-bottom:16px}
+.serv-link{font-size:13px;font-weight:700;color:var(--verde);text-decoration:none;display:flex;align-items:center;gap:4px}
+.serv-link:hover{text-decoration:underline}
+
+/* SOBRE */
+.sobre{padding:80px 6vw;background:var(--dark)}
+.sobre-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@media(max-width:768px){.sobre-inner{grid-template-columns:1fr}}
+.sobre-left{position:relative;display:flex;justify-content:center}
+.sobre-circles{position:relative;width:280px;height:280px}
+.circle-outer{width:280px;height:280px;border-radius:50%;border:1.5px solid rgba(26,158,110,0.2);display:flex;align-items:center;justify-content:center;position:absolute}
+.circle-mid{width:200px;height:200px;border-radius:50%;border:1.5px solid rgba(26,158,110,0.3);background:rgba(26,158,110,0.05);display:flex;align-items:center;justify-content:center}
+.circle-inner{width:100px;height:100px;border-radius:20px;background:var(--verde);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.circle-inner span{font-size:20px;font-weight:900;color:#fff}
+.circle-inner small{font-size:10px;color:rgba(255,255,255,.7);font-weight:500}
+.badge-float{position:absolute;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:12px 18px;backdrop-filter:blur(8px)}
+.badge-float.top{top:0;right:-20px}
+.badge-float.bottom{bottom:0;left:-20px}
+.badge-float strong{display:block;font-size:22px;font-weight:900;color:#fff}
+.badge-float small{font-size:11px;color:rgba(255,255,255,.6)}
+.sobre-right .eyebrow{background:rgba(26,158,110,0.2);color:var(--verde)}
+.sobre-right h2{color:#fff;font-size:clamp(28px,3.5vw,44px);font-weight:900;letter-spacing:-1px;margin-bottom:20px}
+.sobre-right h2 .green{color:var(--verde)}
+.sobre-right p{color:rgba(255,255,255,.7);font-size:16px;line-height:1.8;margin-bottom:14px}
+.sobre-right .green-text{color:var(--verde);font-weight:700;font-size:15px;margin:20px 0 16px}
+.sobre-checks{display:flex;flex-direction:column;gap:10px}
+.sobre-check{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.8);font-size:15px}
+.sobre-check svg{color:var(--verde);flex-shrink:0}
+
+/* CTA VERDE */
+.cta-verde{padding:80px 6vw;background:var(--verde);position:relative;overflow:hidden}
+.cta-verde::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:32px 32px}
+.cta-verde-inner{max-width:700px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.cta-msg-icon{width:56px;height:56px;background:rgba(255,255,255,0.15);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;font-size:26px}
+.cta-verde h2{font-size:clamp(32px,4.5vw,52px);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:16px;line-height:1.1}
+.cta-verde p{color:rgba(255,255,255,.85);font-size:17px;max-width:480px;margin:0 auto 40px;line-height:1.7}
+.cta-verde p strong{color:#fff}
+.btn-branco{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--verde);text-decoration:none;padding:18px 44px;border-radius:100px;font-size:17px;font-weight:900;letter-spacing:.3px;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 32px rgba(0,0,0,0.15)}
+.btn-branco:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.2)}
+.cta-verde-info{margin-top:24px;color:rgba(255,255,255,.65);font-size:13px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--dark);padding:40px 6vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.foot-brand{display:flex;align-items:center;gap:10px}
+.foot-icon{width:36px;height:36px;background:var(--verde);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff}
+.foot-brand strong{display:block;font-size:14px;font-weight:800;color:#fff}
+.foot-brand span{font-size:12px;color:rgba(255,255,255,.4)}
+.foot-copy{font-size:12px;color:rgba(255,255,255,.35);text-align:right;line-height:1.8}
+.foot-copy a{color:rgba(255,255,255,.4);text-decoration:none}
+
+/* WHATS FLOAT */
+.wfloat{position:fixed;bottom:28px;right:28px;z-index:998;background:var(--verde);color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 28px rgba(26,158,110,.5);transition:transform .2s}
+.wfloat:hover{transform:scale(1.1)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-icon">H</div>
+    <div class="nav-brand-text">
+      <strong>Horizon</strong>
+      <span>Consultoria</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+  </ul>
+  <a class="nav-btn" href="https://wa.me/5544988040557?text=Olá!+Vim+pelo+site+e+quero+saber+mais." target="_blank">Fale Conosco</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Consultor Credenciado</div>
+  <h1>Venda mais nos maiores<br/><span class="green">marketplaces do Brasil</span></h1>
+  <p class="hero-sub">Sou um consultor credenciado para Mercado Livre, Amazon, Shopee, Magalu e Shein. Ofereço a estratégia completa para você <strong>ranquear seus anúncios</strong>, aumentar suas vendas e <strong>parar de perder dinheiro</strong>.</p>
+  <a class="btn-primary" href="https://wa.me/5544988040557?text=Olá!+Quero+vender+mais+no+marketplace." target="_blank">QUERO VENDER MAIS &nbsp;→</a>
+  <div class="hero-checks">
+    <div class="hcheck">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      Análise sem compromisso
+    </div>
+    <div class="hcheck">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      Resultados comprovados
+    </div>
+    <div class="hcheck">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      Preços acessíveis
+    </div>
+  </div>
+</section>
+
+<!-- PLATAFORMAS -->
+<div class="plat">
+  <div class="plat-inner">
+    <h2>Domine as plataformas que <span class="green">realmente vendem</span></h2>
+    <p class="plat-sub">Expertise completa nos principais marketplaces do Brasil</p>
+    <div class="plat-logos">
+      <div class="plat-tag">🛒 Mercado Livre</div>
+      <div class="plat-tag">📦 Amazon</div>
+      <div class="plat-tag">🛍️ Shopee</div>
+      <div class="plat-tag">🏪 Magazine Luiza</div>
+      <div class="plat-tag">👗 Shein</div>
+      <div class="plat-tag">🔖 OLX</div>
+    </div>
+  </div>
+</div>
+
+<!-- DESAFIOS -->
+<section class="desafios">
+  <div class="container">
+    <div class="eyebrow">Você se identifica?</div>
+    <h2 class="section-title">Se você se identifica com algum destes<br/><span style="color:var(--vermelho)">desafios</span>, eu posso te ajudar</h2>
+    <div class="desafios-grid">
+      <div class="desafio-card"><div class="desafio-x">✕</div><p>Meus anúncios não aparecem nas buscas.</p></div>
+      <div class="desafio-card"><div class="desafio-x">✕</div><p>Recebo visitas, mas não consigo vender.</p></div>
+      <div class="desafio-card"><div class="desafio-x">✕</div><p>Não sei se meu preço está competitivo.</p></div>
+      <div class="desafio-card"><div class="desafio-x">✕</div><p>Gasto com publicidade (ADS) e não vejo retorno.</p></div>
+      <div class="desafio-card"><div class="desafio-x">✕</div><p>Estou começando e me sinto perdido com tantas regras.</p></div>
+      <div class="desafio-card"><div class="desafio-x">✕</div><p>Quero expandir minha loja física para o online.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="container">
+    <div class="eyebrow green">Nossos Serviços</div>
+    <h2 class="section-title">A direção certa para o seu<br/><span style="color:var(--verde)">negócio decolar</span></h2>
+    <p class="section-sub">Soluções completas para transformar seu e-commerce em uma máquina de vendas</p>
+    <div class="serv-grid">
+      <div class="serv-card">
+        <div class="serv-icon-wrap" style="background:#f0fdf9"><span style="font-size:22px">📈</span></div>
+        <h3>Análise de Mercado e Estratégia</h3>
+        <p>Encontramos as melhores oportunidades e definimos um plano de ação personalizado para seu negócio crescer com consistência.</p>
+        <a class="serv-link" href="https://wa.me/5544988040557?text=Quero+saber+mais+sobre+análise+de+mercado." target="_blank">Saiba mais →</a>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon-wrap" style="background:#eff6ff"><span style="font-size:22px">🔍</span></div>
+        <h3>Otimização e Ranqueamento</h3>
+        <p>Ajustamos seus anúncios (títulos, fotos, ficha técnica) para que apareçam na primeira página e convertam mais visitas em vendas.</p>
+        <a class="serv-link" href="https://wa.me/5544988040557?text=Quero+otimizar+meus+anúncios." target="_blank">Saiba mais →</a>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon-wrap" style="background:#fdf4ff"><span style="font-size:22px">🎨</span></div>
+        <h3>Criação de Conteúdo</h3>
+        <p>Desenvolvemos anúncios em vídeo e imagens de alta conversão para destacar seus produtos da concorrência.</p>
+        <a class="serv-link" href="https://wa.me/5544988040557?text=Quero+saber+sobre+criação+de+conteúdo." target="_blank">Saiba mais →</a>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon-wrap" style="background:#fff7ed"><span style="font-size:22px">📊</span></div>
+        <h3>Gestão de Ads</h3>
+        <p>Campanhas de Product Ads no ML, Meta Ads e Google Ads com estratégia real de ACOS, palavras-chave e orçamento otimizado.</p>
+        <a class="serv-link" href="https://wa.me/5544988040557?text=Quero+gestão+de+ADS." target="_blank">Saiba mais →</a>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon-wrap" style="background:#fff1f2"><span style="font-size:22px">📱</span></div>
+        <h3>Gestão de Mídias Sociais</h3>
+        <p>Criamos campanhas no Instagram e Facebook que trazem tráfego e vendas, com análise completa das métricas.</p>
+        <a class="serv-link" href="https://wa.me/5544988040557?text=Quero+gestão+de+mídias+sociais." target="_blank">Saiba mais →</a>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon-wrap" style="background:#f0fdf9"><span style="font-size:22px">💰</span></div>
+        <h3>Preços Acessíveis</h3>
+        <p>Planos especiais para quem está começando, com o melhor custo-benefício do mercado e suporte direto via WhatsApp.</p>
+        <a class="serv-link" href="https://wa.me/5544988040557?text=Quero+saber+sobre+os+planos+e+preços." target="_blank">Saiba mais →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-left">
+      <div class="sobre-circles">
+        <div class="circle-outer">
+          <div class="circle-mid">
+            <div class="circle-inner">
+              <span>H</span>
+              <small>Horizon</small>
+            </div>
+          </div>
+        </div>
+        <div class="badge-float top">
+          <strong>100+</strong>
+          <small>Clientes satisfeitos</small>
+        </div>
+        <div class="badge-float bottom">
+          <strong>5+</strong>
+          <small>Anos de experiência</small>
+        </div>
+      </div>
+    </div>
+    <div class="sobre-right">
+      <div class="eyebrow">Quem está por trás</div>
+      <h2>Seu consultor <span class="green">especialista</span></h2>
+      <p>Com anos de experiência prática no campo de batalha do e-commerce, sou um <strong style="color:#fff">consultor de vendas credenciado focado em resultados</strong>. Minha missão é dar um norte claro e acessível para vendedores, transformando dados complexos em estratégias simples que geram vendas reais.</p>
+      <p class="green-text">Chega de achismos, vamos trabalhar com dados.</p>
+      <div class="sobre-checks">
+        <div class="sobre-check">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          Consultor credenciado nos principais marketplaces
+        </div>
+        <div class="sobre-check">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          Foco em resultados mensuráveis
+        </div>
+        <div class="sobre-check">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          Atendimento personalizado para cada negócio
+        </div>
+        <div class="sobre-check">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          Vendedor ativo no Amazon e Mercado Livre
+        </div>
+        <div class="sobre-check">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          Atendemos todo o Brasil — PR, SC, MG, RS, SP e GO
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA VERDE -->
+<section class="cta-verde">
+  <div class="cta-verde-inner">
+    <div class="cta-msg-icon">💬</div>
+    <h2>Vamos conversar sobre<br/>o seu projeto?</h2>
+    <p>Clique no botão abaixo para uma <strong>análise inicial sem compromisso</strong>. Vamos entender seus desafios e traçar um plano para você alcançar seus objetivos.</p>
+    <a class="btn-branco" href="https://wa.me/5544988040557?text=Olá!+Quero+uma+análise+inicial+sem+compromisso." target="_blank">QUERO VENDER MAIS &nbsp;→</a>
+    <div class="cta-verde-info">
+      <span>Resposta rápida via WhatsApp</span>
+      <span>•</span>
+      <span>Atendimento personalizado</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">
+    <div class="foot-icon">H</div>
+    <div>
+      <strong>Horizon</strong>
+      <span>Consultoria Credenciada</span>
+    </div>
+  </div>
+  <div class="foot-copy">
+    © 2026 Horizon Consultoria. Todos os direitos reservados.<br/>
+    Consultor credenciado para Mercado Livre, Amazon, Shopee, Magalu e Shein
+  </div>
+</footer>
+
+<!-- WHATS FLOAT -->
+<a class="wfloat" href="https://wa.me/5544988040557?text=Olá!+Vim+pelo+site." target="_blank" title="Falar no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
